@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c59c3a646ede9b4ea9291dcbe7ab67a, type: 3}
+  m_Name: GraccoonFighter
+  m_EditorClassIdentifier: 
+  fighterId: bcebb0e8-f0ad-4efd-b3de-b90c0003f912
+  fighterName: Graccoon
+  battlePrefab: {fileID: 6822363395069798454, guid: 6617ea325c68de84db97bbc9a0bd8710, type: 3}
+  rootSkeleton: {fileID: 5036613242489478173, guid: 6617ea325c68de84db97bbc9a0bd8710, type: 3}
+  statesPath: Assets/Characters/Graccoon/Fighter/States
+  attacksPath: Assets/Characters/Graccoon/Fighter/Attacks
+  characterSelectPortrait: {fileID: 0}
+  chromas: []
+  physicsConstants: {fileID: 11400000, guid: 905013f3a899d9d418c0cab78eded590, type: 2}
+  moveConstants: {fileID: 11400000, guid: 938f718dd879f994db90f6ecab645e0a, type: 2}
+  objectsToInstantiate:
+  - {fileID: 5124736658060964048, guid: 85c5876163c4570419b95545e8bd8b7c, type: 3}
+  stateTabName: 
+  fighterStates:
+  - {fileID: 11400000, guid: 42a180024570ab146b4298e8391b93ea, type: 2}
+  - {fileID: 11400000, guid: cfadfe619d17c90479d1641e0ef15eb0, type: 2}
+  - {fileID: 11400000, guid: fedde92b339b6684da70546ed40f5ea9, type: 2}
+  - {fileID: 11400000, guid: 302b9ebe1af7427448ff600637befc28, type: 2}
+  - {fileID: 11400000, guid: 42de07cd2b472a04aab3e46bf41e05f2, type: 2}
+  - {fileID: 11400000, guid: 144bcb8536c37a84ea3476da05d21263, type: 2}
+  - {fileID: 11400000, guid: 7909cdf9caa35e74f80366cdd1c31dba, type: 2}
+  - {fileID: 11400000, guid: 144b94835efe05c4580cb0056e775a13, type: 2}
+  - {fileID: 11400000, guid: ed5407ff5d9ff8f49be2253db655c707, type: 2}
+  anyStateTransitions:
+  - trigger: 0
+    stateToCall: {fileID: 11400000, guid: 45a9903434b6b7441befa0eb26516f00, type: 2}
+  - trigger: 1
+    stateToCall: {fileID: 0}
+  - trigger: 2
+    stateToCall: {fileID: 0}
+  - trigger: 3
+    stateToCall: {fileID: 0}
+  - trigger: 4
+    stateToCall: {fileID: 0}
+  - trigger: 5
+    stateToCall: {fileID: 0}

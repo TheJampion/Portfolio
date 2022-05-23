@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be51c2bdc160cbe4e8be0e7ddc725be2, type: 3}
+  m_Name: Graccoon_test
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  forwardFromInitialInputDirection: 0
+  forwardFromInputDirection: 0
+  forwardFixed: 0
+  forwardFromVelocity: 0
+  setVelocity: 0
+  velocityMagnitude:
+    value: 0
+  velocityDirection: 0
+  velocityFromMoveInput: 0
+  velocityFromAerialDrift: 0
+  pushbackEnabled: 1
+  gravityEnabled: 1
+  setGravity: 0
+  gravity: 0
+  setMaxFallSpeed: 0
+  maxFallSpeed: 0
+  setGravityComponent: 0
+  gravityComponent: 0
+  frictionEnabled: 0
+  setFriction: 0
+  friction: 0
+  attackData: {fileID: 0}
+  animationClips:
+  - {fileID: 1827226128182048838, guid: 442dece05c51db54aa8a43a7d9fbb1a5, type: 3}
+  transitions: []
+  stateBehaviours:
+  - {fileID: 11400000, guid: c56d06ff5731e2b4584deaaceacc75ac, type: 2}

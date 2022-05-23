@@ -1,0 +1,657 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc32c3e6a220484c82384bdc7b66e63, type: 3}
+  m_Name: Graccoon_Jab
+  m_EditorClassIdentifier: 
+  attackName: Jab 1
+  damage: 5
+  shieldDamage:
+    value: 196608
+  chargeTime: 0
+  isSkill: 0
+  autoLock: 0
+  rotatesCameraToSide: 0
+  shieldBreak: 0
+  isMultihit: 0
+  attackerHitlag: 0
+  defenderHitlag: 0
+  hitGrounded: 0
+  triggerAfterHitlag: 0
+  triggerAfterHitlagAerial: 0
+  numberOfFrames: 46
+  recoveryFramesStart: 30
+  hitlagFrames: 2
+  hitstunFrames: 12
+  shieldstunFrames: 6
+  ccFrames: 0
+  getupWaitFrames: 0
+  skillInvincibilityStartupFrames: 0
+  knockUpVerticalForce:
+    value: 32768000
+  knockUpHorizontalForce:
+    value: 16384000
+  hitboxData:
+  - anchorObjectName: Wrist_L
+    instantiatedObject: 0
+    positionData:
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    sizeData:
+    - value: 0
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    - value: 65536
+    offsetData:
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    - x:
+        value: 0
+      y:
+        value: 0
+      z:
+        value: 0
+    frameActiveData: 00000000000000000101010101000000000000000000000000000000000000000000000000000000000000000000
+  destroyPrefabOnHit: 0
+  destroyPrefabOnHitEnvironment: 0
+  destroyPrefabAfterTimer: 0
+  destroyPrefabFramesToWait: 0
+  objectsToInstantiate:
+  - objectIndex: 0
+    frameDelay: 0
+    isTrap: 0
+    chargeTime: 0
+  soundEffectOnHit: {fileID: 0}
+  soundEffectVolume: 0

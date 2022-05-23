@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4363648096f044d9882ccd91eb8cb2, type: 3}
+  m_Name: StateTestingBattleLoadData
+  m_EditorClassIdentifier: 
+  playerSlotDatas:
+  - playerSlot: 0
+    isLocal: 1
+    fighterId: bcebb0e8-f0ad-4efd-b3de-b90c0003f912
+  - playerSlot: 1
+    isLocal: 1
+    fighterId: bcebb0e8-f0ad-4efd-b3de-b90c0003f912
+  isOnline: 0
+  battleEnvironment: {fileID: 11400000, guid: 85a10cc4abc65854285e29a6ee1a3dd5, type: 2}

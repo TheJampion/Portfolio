@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1744c10fdcc978242bcc2d8531f9db84, type: 3}
+  m_Name: FighterDatabase
+  m_EditorClassIdentifier: 
+  fighters:
+  - {fileID: 11400000, guid: 5b15e393ac3c451438ed3978bbf0caea, type: 2}
+  - {fileID: 11400000, guid: 1bd3ee07e2ccc5642b379728457938f2, type: 2}
+  - {fileID: 11400000, guid: 86ab2b695f805ca459f30c58ab087e7d, type: 2}

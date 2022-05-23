@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c59c3a646ede9b4ea9291dcbe7ab67a, type: 3}
+  m_Name: TestFighter
+  m_EditorClassIdentifier: 
+  fighterId: 29a0de03-4d6c-4c78-8ed6-743211e85e74
+  fighterName: 
+  battlePrefab: {fileID: 6822363395069798454, guid: 6617ea325c68de84db97bbc9a0bd8710, type: 3}
+  rootSkeleton: {fileID: 5036613242489478173, guid: 6617ea325c68de84db97bbc9a0bd8710, type: 3}
+  characterSelectPortrait: {fileID: 0}
+  chromas: []
+  physicsConstants: {fileID: 11400000, guid: 905013f3a899d9d418c0cab78eded590, type: 2}
+  moveConstants: {fileID: 11400000, guid: 938f718dd879f994db90f6ecab645e0a, type: 2}
+  stateTabName: 
+  fighterStates:
+  - {fileID: 11400000, guid: 82d95522bb7e87e42a57da046960a8ad, type: 2}
+  - {fileID: 11400000, guid: 8cdd292e3a37ecf40aceedc48503522a, type: 2}
+  - {fileID: 11400000, guid: bfd40a7da8a1d9d4ca153bde3e4c67ab, type: 2}
+  anyStateTransitions:
+  - trigger: 0
+    stateToCall: {fileID: 0}
+  - trigger: 1
+    stateToCall: {fileID: 0}
+  - trigger: 2
+    stateToCall: {fileID: 0}
+  - trigger: 3
+    stateToCall: {fileID: 0}
+  - trigger: 4
+    stateToCall: {fileID: 0}
+  - trigger: 5
+    stateToCall: {fileID: 0}
