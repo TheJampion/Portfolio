@@ -1,0 +1,1 @@
+This is a project being used for my upcoming game Mythren.  I have not personally made the RollbackManager or the Intial RollbackEntity interface code. I have updated the RollbackManager for various use cases across the project.
