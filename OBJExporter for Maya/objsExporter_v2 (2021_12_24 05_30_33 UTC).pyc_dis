@@ -1,0 +1,147 @@
+# Embedded file name: C:/Users/i9089303/Documents/maya/scripts\objsExporter_v2.py
+import maya.cmds as cmds
+
+def objsExporter():
+    if cmds.window('objExWin', ex=True):
+        cmds.deleteUI('objExWin')
+    cmds.window('objExWin', t='OBJs Exporter', s=False)
+    cmds.columnLayout(adj=True)
+    cmds.frameLayout(l='Rename (optional)', bs='etchedOut', cll=True, cl=True)
+    cmds.textFieldGrp('renameIt', l='Rename Geomtery:', cw2=(100, 190), en=True)
+    cmds.setParent('..')
+    cmds.setParent('..')
+    cmds.frameLayout(l='Frame Range:', bs='out')
+    cmds.radioButtonGrp('frameRange', nrb=3, la3=['Current', 'Time Slider', 'Start/End'], cw3=(100, 120, 100), sl=1, on3="cmds.intFieldGrp('startFrame', edit=True, en=True), cmds.intFieldGrp('endFrame', edit=True, en=True)", of3="cmds.intFieldGrp('startFrame', edit=True, en=False), cmds.intFieldGrp('endFrame', edit=True, en=False)")
+    cmds.setParent('..')
+    cmds.rowColumnLayout(nr=1)
+    cmds.intFieldGrp('startFrame', l='Start frame:', en=False, cw2=(80, 50))
+    cmds.intFieldGrp('endFrame', l='End frame:', en=False, cw2=(60, 50))
+    cmds.setParent('..')
+    cmds.frameLayout(l='Additional Options', bs='out')
+    cmds.checkBox('triangulate', l='Triangulate for RealFlow', v=False)
+    cmds.checkBox('material', l='Export materials', v=False)
+    cmds.checkBox('combine', l='Export as one mesh ', v=False, onc="cmds.textField('nameComp', edit=True, en=True), cmds.textFieldGrp('renameIt', edit=True, en=False)", ofc="cmds.textField('nameComp', edit=True, en=False), cmds.textFieldGrp('renameIt', edit=True, en=True)")
+    cmds.textField('nameComp', tx='type a name...', en=False)
+    cmds.checkBox('original', l='Keep original geometry', v=True)
+    cmds.checkBox('dirSeq', l='Create sequence directories', v=True)
+    cmds.frameLayout(l='', bs='out')
+    cmds.columnLayout(adj=True)
+    cmds.button(l='Save To...', c='objsExporter_v2.browserDir()')
+    cmds.button(l='Export', c='objsExporter_v2.export()')
+    cmds.frameLayout(l='About', bs='in', cll=True, cl=True, mw=45, mh=5)
+    cmds.text(l='Copyright (c) 2010 Christos Parliaros')
+    cmds.text(l='Version 2.0.2')
+    cmds.button(l='Click here for updates', c='webbrowser.open("http://www.creativecrash.com/maya/downloads/scripts-plugins/utility-external/export/c/objs-exporter")')
+    cmds.showWindow()
+
+
+def browserDir():
+    global setDir
+    rootDir = cmds.workspace(q=True, rd=True)
+    setDir = cmds.fileDialog2(cap='Set Path for Export', dir=rootDir, ds=2, fm=3, ff='directory')
+
+
+def export():
+    selectedObjects = cmds.ls(sl=True)
+    polyObjects = []
+    exportObjects = []
+    if selectedObjects == []:
+        cmds.warning("There is nothing selected. Please select your geometry and press 'Export' again!")
+    else:
+        for object in range(len(selectedObjects)):
+            shape = cmds.listRelatives(selectedObjects[object], s=True)
+            type = cmds.objectType(shape[0])
+            if type == 'nurbsSurface':
+                converted = cmds.nurbsToPoly(selectedObjects[object], mnd=True, ch=True, uch=False, ucr=False, es=False, ntr=False, f=1, pt=1, pc=200, chr=0.9, ft=0.01, mel=0.001, d=0.1, ut=2, un=4, vt=2, vn=4, cht=0.01)
+                polyObjects.append(converted[0])
+            elif type == 'subdiv':
+                converted = cmds.subdToPoly(selectedObjects[object], suv=True, ch=False, epp=False, un=False, d=0, sc=1, mp=1, f=1)
+                polyObjects.append(converted[0])
+            elif type == 'mesh':
+                copy = cmds.duplicate(selectedObjects[object], ic=True)
+                polyObjects.append(copy[0])
+            else:
+                cmds.warning('The object ' + str(selectedObjects[object]) + ' has not exported, because is ' + type + " and it can't converted to polygons!")
+
+        newname = cmds.textFieldGrp('renameIt', q=True, tx=True)
+        if len(newname) != 0:
+            for object in range(len(polyObjects)):
+                exportName = cmds.rename(polyObjects[object], newname + '_' + str(object))
+                exportObjects.append(exportName)
+
+        else:
+            exportObjects = polyObjects
+        triangulate = cmds.checkBox('triangulate', q=True, v=True)
+        if triangulate == 1:
+            for object in exportObjects:
+                cmds.polyTriangulate(object)
+
+        if not cmds.pluginInfo('objExport', q=True, l=True):
+            cmds.loadPlugin('objExport')
+            cmds.pluginInfo('objExport', e=True, a=True)
+        dirSeq = cmds.checkBox('dirSeq', q=True, v=True)
+        material = cmds.checkBox('material', q=True, v=True)
+        combine = cmds.checkBox('combine', q=True, v=True)
+        frameRange = cmds.radioButtonGrp('frameRange', q=True, sl=True)
+        startPlayback = int(cmds.playbackOptions(q=True, min=True))
+        endPlayback = int(cmds.playbackOptions(q=True, max=True))
+        startFrame = cmds.intFieldGrp('startFrame', q=True, v=True)
+        endFrame = cmds.intFieldGrp('endFrame', q=True, v=True)
+        nameComp = cmds.textField('nameComp', q=True, tx=True)
+        if combine == 1 and len(nameComp) != 0:
+            cmds.select(exportObjects)
+            filename = str(setDir[0]) + '/' + str(nameComp)
+            if frameRange == 1:
+                if material == 1:
+                    exportMtl_on(filename + '.obj')
+                if material == 0:
+                    exportMtl_off(filename + '.obj')
+            elif frameRange == 2:
+                exportSequence(startPlayback, endPlayback + 1, filename, nameComp)
+            elif frameRange == 3:
+                exportSequence(startFrame[0], endFrame[0] + 1, filename, nameComp)
+        if combine == 1 and len(nameComp) == 0:
+            cmds.warning('Please type a name in the text field in order to export the selected geometry as one mesh!')
+        if combine == 0:
+            for object in range(len(exportObjects)):
+                filename = str(setDir[0]) + '/' + str(exportObjects[object])
+                cmds.select(exportObjects[object])
+                if frameRange == 1:
+                    if material == 1:
+                        exportMtl_on(filename + '.obj')
+                    if material == 0:
+                        exportMtl_off(filename + '.obj')
+                elif frameRange == 2:
+                    exportSequence(startPlayback, endPlayback + 1, filename, exportObjects[object])
+                elif frameRange == 3:
+                    exportSequence(startFrame[0], endFrame[0] + 1, filename, exportObjects[object])
+
+        original = cmds.checkBox('original', q=True, v=True)
+        if original == 1:
+            cmds.delete(exportObjects)
+        elif original == 0:
+            cmds.delete(selectedObjects)
+
+
+def exportMtl_on(pathToSave):
+    cmds.file(pathToSave, type='OBJexport', es=True, pr=True, op='groups=1;ptgroups=1;materials=1;smoothing=1;normals=1')
+
+
+def exportMtl_off(pathToSave):
+    cmds.file(pathToSave, type='OBJexport', es=True, pr=True, op='groups=1;ptgroups=1;materials=0;smoothing=1;normals=1')
+
+
+def exportSequence(start, end, pathToSave, geometry):
+    dirSeq = cmds.checkBox('dirSeq', q=True, v=True)
+    material = cmds.checkBox('material', q=True, v=True)
+    if dirSeq == 1:
+        cmds.sysFile(pathToSave, md=True)
+        path = pathToSave + '/' + str(geometry)
+    elif dirSeq == 0:
+        path = folder
+    for frame in range(start, end):
+        cmds.currentTime(frame, e=True)
+        if material == 1:
+            exportMtl_on(path + '.%06d.obj' % frame)
+        if material == 0:
+            exportMtl_off(path + '.%06d.obj' % frame)
